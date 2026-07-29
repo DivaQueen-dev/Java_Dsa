@@ -1,59 +1,95 @@
-<div align="center">
+<img align="right" src="./assets/anya.png" width="140" alt="anya" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=F7A800&center=true&vCenter=true&width=700&lines=Java+from+Scratch+to+Advanced;Core+Java+%26+OOPs+Concepts;Data+Structures+%26+Algorithms;A+Complete+Java+Journey+%F0%9F%9A%80" alt="Typing SVG" />
+<h1 align="center">🌾 Java_Dsa 🥐</h1>
+<p align="center"><i>a cozy little corner of the internet where i learn Java, one peanut at a time</i></p>
 
-<br/>
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-F3E5D8?style=for-the-badge&logo=openjdk&logoColor=8B5E3C" />
+  <img src="https://img.shields.io/badge/DSA-Practice-EAC9C1?style=for-the-badge&logoColor=8B5E3C" />
+  <img src="https://img.shields.io/badge/Status-Active-D9C3A9?style=for-the-badge&logoColor=8B5E3C" />
+</p>
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![DSA](https://img.shields.io/badge/DSA-Practice-red?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
+<p align="center">✿ ── ⋆⋅☆⋅⋆ ── ✿</p>
 
-</div>
+## 🍂 About This Corner
 
----
+This repo is my Java learning journal — soft launch, slow burn, no rush. It starts at "what even is a variable" and wanders all the way through Object-Oriented Programming and Data Structures & Algorithms, growing a little every week like something left on a windowsill to catch the light.
 
-## 📌 About This Repository
+> 🌼 *Still growing, still updating — like most good things.*
 
-This repository documents my complete Java learning journey — from absolute basics like variables, loops, and functions, all the way through Object Oriented Programming and Data Structures & Algorithms. Every topic is covered step by step as I progress, making this a living repository that grows with me.
+<p align="center">✿ ── ⋆⋅☆⋅⋆ ── ✿</p>
 
-> 🚧 **This repo is actively updated. All topics will be fully covered within the next 2 weeks. Stay tuned!**
+## 📖 What's Covered
 
----
+- 🌱 Java Basics — variables, data types, operators, control flow
+- 🌿 Functions, loops, arrays, strings
+- 🍃 Object-Oriented Programming — classes, inheritance, polymorphism, abstraction
+- 🪴 Data Structures — linked lists, stacks, queues, trees, graphs
+- 🌻 Algorithms — sorting, searching, recursion, dynamic programming
+- 🧺 Problem solving & coding interview patterns
 
-## 📚 What's Covered
+<p align="center">✿ ── ⋆⋅☆⋅⋆ ── ✿</p>
 
-- Java Basics — variables, data types, operators, control flow
-- Functions, loops, arrays, strings
-- Object Oriented Programming — classes, inheritance, polymorphism, abstraction
-- Data Structures — linked lists, stacks, queues, trees, graphs
-- Algorithms — sorting, searching, recursion, dynamic programming
-- Problem solving & coding interview patterns
+## 🗺️ Repository Structure
 
----
+<!-- STRUCTURE:START -->
+```
+Java_Dsa/
+├── Arrays/
+├── BackTracking/
+├── Basics/
+├── BitManipulation/
+├── Lists/
+├── MatrixQs/
+├── OOPS/
+├── Recusrion/
+├── Searching/
+├── Sorting/
+├── Strings/
+└── README.md
+```
+<!-- STRUCTURE:END -->
 
-## 🧩 Practice Problem List
+*This little map updates itself automatically whenever a folder changes — a quiet helper working in the background so you don't have to.*
 
-All DSA problems I'm solving are curated in this list — feel free to follow along and solve them yourself!
+<p align="center">✿ ── ⋆⋅☆⋅⋆ ── ✿</p>
+
+## 🕯️ Stats, gently
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=DivaQueen-dev&show_icons=true&hide_border=true&title_color=8B5E3C&icon_color=D9A9A0&text_color=6B4F3F&bg_color=FFF8F0" alt="GitHub stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DivaQueen-dev&layout=compact&hide_border=true&title_color=8B5E3C&text_color=6B4F3F&bg_color=FFF8F0" alt="Top languages" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=DivaQueen-dev&hide_border=true&background=FFF8F0&ring=D9A9A0&fire=E8B4B8&currStreakLabel=8B5E3C&sideLabels=6B4F3F&currStreakNum=6B4F3F&sideNums=6B4F3F&dates=A98467" alt="GitHub streak" />
+</p>
+
+<p align="center">✿ ── ⋆⋅☆⋅⋆ ── ✿</p>
+
+## 🧵 Practice Problem List
+
+All the DSA problems I'm actually working through, gathered in one place —
 
 👉 [**My DSA Problem List on LeetCode**](https://leetcode.com/problem-list/dxsj4y5v/)
 
----
+<p align="center">✿ ── ⋆⋅☆⋅⋆ ── ✿</p>
 
-## 🔗 Connect with Me
+## 🫖 Connect with Me
 
-<div align="center">
+<p align="center">
+  <a href="https://github.com/DivaQueen-dev"><img src="https://img.shields.io/badge/GitHub-DivaQueen--dev-F3E5D8?style=for-the-badge&logo=github&logoColor=8B5E3C" /></a>
+  <a href="https://codolio.com/profile/cinnamongirl"><img src="https://img.shields.io/badge/Codolio-cinnamongirl-EAC9C1?style=for-the-badge&logoColor=8B5E3C" /></a>
+</p>
 
-[![GitHub](https://img.shields.io/badge/GitHub-DivaQueen--dev-black?style=for-the-badge&logo=github)](https://github.com/DivaQueen-dev)
-[![Codolio](https://img.shields.io/badge/Codolio-cinnamongirl-orange?style=for-the-badge)](https://codolio.com/profile/cinnamongirl)
+<p align="center">⭐ if you're on the same quiet little journey ⭐</p>
 
-</div>
+<p align="center"><i>happy coding 🍯</i></p>
 
----
-
-<div align="center">
-
-⭐ **Star this repo if you're on the same journey!**
-
-*Happy Coding! 💻*
-
-</div>
+<br>
+<p align="center">
+  <img src="./assets/anya.png" width="110" alt="anya waving goodbye" />
+</p>
