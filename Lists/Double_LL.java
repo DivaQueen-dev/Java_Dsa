@@ -127,6 +127,24 @@ public class Double_LL {
         return size;
     }
 
+    //reverse the linked list
+    public void reverse() {
+        Node temp = null;
+        Node current = head;
+
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+
+        if (temp != null) {
+            tail = head;
+            head = temp.prev;
+        }
+    }
+
     public static void main(String[] args) {
 
         Double_LL dll = new Double_LL();
@@ -137,6 +155,10 @@ public class Double_LL {
         dll.addLast(40);
 
         System.out.println("Forward Traversal:");
+        dll.printForward();
+
+        dll.reverse();
+        System.out.println("\nAfter reverse():");
         dll.printForward();
 
         System.out.println("Backward Traversal:");
@@ -156,5 +178,6 @@ public class Double_LL {
         dll.printBackward();
 
         System.out.println("Size: " + dll.size());
+
     }
 }
