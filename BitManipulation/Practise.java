@@ -11,7 +11,7 @@ public class Practise {
         int[] arr = {1, 2, 3, 4, 4, 5};
         findMissingAndDuplicate(arr);
     }
- //Add 1 Using Bit Manipulation
+    //Add 1 Using Bit Manipulation
     public static int addOne(int num) {
         return num + 1;
     }

@@ -8,5 +8,5 @@ class Encapsulation
         Encapsulation obj = new Encapsulation();
         obj.display();
     }
-    
+
 }

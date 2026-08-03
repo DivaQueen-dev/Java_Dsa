@@ -4,7 +4,7 @@ public class MatrixAddition{
         int[][] b={{5,6},{7,8}};
         for(int i=0;i<2;i++){
             for(int j=0;j<2;j++)
-                System.out.print((a[i][j]+b[i][j])+" ");
+            System.out.print((a[i][j]+b[i][j])+" ");
             System.out.println();
         }
     }

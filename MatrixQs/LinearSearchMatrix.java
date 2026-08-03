@@ -1,8 +1,8 @@
 public class LinearSearchMatrix{
     static boolean search(int[][] a,int key){
         for(int[] row:a)
-            for(int x:row)
-                if(x==key) return true;
+        for(int x:row)
+        if(x==key) return true;
         return false;
     }
     public static void main(String[] args){

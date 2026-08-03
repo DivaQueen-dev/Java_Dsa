@@ -8,5 +8,5 @@ class Node{
     }
 }
 public class ZIgZagLL {
-    
+
 }

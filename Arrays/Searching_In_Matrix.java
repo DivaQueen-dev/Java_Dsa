@@ -4,7 +4,7 @@ public class Searching_In_Matrix {
         while(row<matrix.length && col>=0){
             if(matrix[row][col]==key){
                 System.out.println("Element"+key+" found at index: "+row+","+col);
-                 return true;
+                return true;
             }
             else if(matrix[row][col]>key){
                 col--;
@@ -17,7 +17,7 @@ public class Searching_In_Matrix {
         }
         System.out.println("Element"+key+" not found in the matrix.");
         return false;
-      
+
     }
     public static void main(String[] args) {
         int[][] matrix = {
@@ -29,7 +29,7 @@ public class Searching_In_Matrix {
         };
         int key = 5;
         boolean found = staircasesearch(matrix,key);
-    
+
     }
 }
 //Time Complexity: O(n+m) where n is the number of rows and m is the number of columns in the matrix.

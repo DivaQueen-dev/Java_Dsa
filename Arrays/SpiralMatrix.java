@@ -1,7 +1,7 @@
 /*  1 2 3
-    6 5 4
-    8 7 9 
-    1 2 3 4 9 7 8 6 5 */
+6 5 4
+8 7 9
+1 2 3 4 9 7 8 6 5 */
 
 import java.util.*;
 public class SpiralMatrix {

@@ -2,7 +2,7 @@ class Shape1 {
     void draw() {
         System.out.println("Drawing a shape");
     }
-}   
+}
 class Circle1 extends Shape1 {
     @Override
     void draw() {

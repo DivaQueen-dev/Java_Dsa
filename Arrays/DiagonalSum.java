@@ -1,15 +1,15 @@
 public class DiagonalSum {
-        public static int diagonalSum_1(int[][] matrix) {
-            int sum = 0;
-            for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < matrix[0].length; j++) {
-                    if (i == j || i + j == matrix.length - 1) {
-                        sum += matrix[i][j];
-                    }
+    public static int diagonalSum_1(int[][] matrix) {
+        int sum = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (i == j || i + j == matrix.length - 1) {
+                    sum += matrix[i][j];
                 }
             }
-            return sum;
         }
+        return sum;
+    }
     public static int diagonalSum_2(int[][] matrix) {
         int sum = 0;
         for (int i = 0; i < matrix.length; i++) {

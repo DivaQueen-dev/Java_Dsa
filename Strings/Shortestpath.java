@@ -1,5 +1,4 @@
 
-
 public class Shortestpath {
     public static void main(String[] args){
         String path="WNEENESENNN";

@@ -10,16 +10,16 @@ class Jagged
         {
             for(int j=0;j<nums[i].length;j++)
             {
-               nums[i][j]=(int)(Math.random()*100);
+                nums[i][j]=(int)(Math.random()*100);
             }
         }
         for(int[] row:nums)
         {
-           for(int cols:row)
-           {
-               System.out.print(cols+" ");
-           }
-           System.out.println();    
+            for(int cols:row)
+            {
+                System.out.print(cols+" ");
+            }
+            System.out.println();
         }
     }
 }

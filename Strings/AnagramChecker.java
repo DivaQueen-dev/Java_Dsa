@@ -36,13 +36,12 @@ public class AnagramChecker {
     }
 }
 
+// String s1 = new String("Hello");
+// String s2 = s1.intern();
 
-        // String s1 = new String("Hello");
-        // String s2 = s1.intern();
+// String s3 = "Hello";
 
-        // String s3 = "Hello";
-
-        // System.out.println(s2 == s3);
-        //it is true because both s2 and s3 refer to the same string literal "Hello" in the string pool. 
-        // The intern() method ensures that s2 points to the string literal in the pool, which is the same as s3.
+// System.out.println(s2 == s3);
+//it is true because both s2 and s3 refer to the same string literal "Hello" in the string pool.
+// The intern() method ensures that s2 points to the string literal in the pool, which is the same as s3.
 

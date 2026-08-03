@@ -14,18 +14,18 @@ class Sorting
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-                    count++; 
+                    count++;
                 }
             }
             if(count == 0) break;
         }
     }
     //selection sort
-       public static void selectionsort(int arr[])
+    public static void selectionsort(int arr[])
     {
         for(int i=0;i<arr.length-1;i++)
         {
-        int minpos=i;
+            int minpos=i;
             for(int j=i+1;j<arr.length;j++)
             {
                 if(arr[minpos]>arr[j])

@@ -1,17 +1,15 @@
-  class Node {
-        int data;
-        Node next;
+class Node {
+    int data;
+    Node next;
 
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
+    Node(int data) {
+        this.data = data;
+        this.next = null;
     }
+}
 public class LL_Cycle {
 
-  
-
-   static Node head;
+    static Node head;
 
     // Print Linked List
     static void printList() {

@@ -20,23 +20,23 @@ public class AdvCalci {
 
         switch (operation) {
             case "add":
-                System.out.println(num1 + num2);
-                break;
+            System.out.println(num1 + num2);
+            break;
             case "sub":
-                System.out.println(num1 - num2);
-                break;
+            System.out.println(num1 - num2);
+            break;
             case "mul":
-                System.out.println(num1 * num2);
-                break;
+            System.out.println(num1 * num2);
+            break;
             case "div":
-                if (num2 == 0) {
-                    System.out.println("Error: Division by zero");
-                } else {
-                    System.out.println(num1 / num2);
-                }
-                break;
+            if (num2 == 0) {
+                System.out.println("Error: Division by zero");
+            } else {
+                System.out.println(num1 / num2);
+            }
+            break;
             default:
-                System.out.println("Invalid operation. Use add, sub, mul, or div.");
+            System.out.println("Invalid operation. Use add, sub, mul, or div.");
         }
     }
 }

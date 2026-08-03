@@ -174,46 +174,46 @@ public class LL_2 {
         return idx + 1;
     }
 
-// ---------------- REVERSE LINKED LIST ----------------
-public void reverse() {
+    // ---------------- REVERSE LINKED LIST ----------------
+    public void reverse() {
 
-    Node prev = null;
-    Node curr = head;
-    Node next;
+        Node prev = null;
+        Node curr = head;
+        Node next;
 
-    while (curr != null) {
+        while (curr != null) {
 
-        // Save the next node
-        next = curr.next;
+            // Save the next node
+            next = curr.next;
 
-        // Reverse the link
-        curr.next = prev;
+            // Reverse the link
+            curr.next = prev;
 
-        // Move prev one step ahead
-        prev = curr;
+            // Move prev one step ahead
+            prev = curr;
 
-        // Move curr one step ahead
-        curr = next;
+            // Move curr one step ahead
+            curr = next;
+        }
+
+        head = prev;
     }
 
-    head = prev;
-}
+    // ---------------- RECURSIVE REVERSE ----------------
+    public Node reverseRecursive(Node head) {
 
-// ---------------- RECURSIVE REVERSE ----------------
-public Node reverseRecursive(Node head) {
+        // Base Case
+        if (head == null || head.next == null) {
+            return head;
+        }
 
-    // Base Case
-    if (head == null || head.next == null) {
-        return head;
+        Node newHead = reverseRecursive(head.next);
+
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
     }
-
-    Node newHead = reverseRecursive(head.next);
-
-    head.next.next = head;
-    head.next = null;
-
-    return newHead;
-}
 
     // ---------------- MAIN ----------------
     public static void main(String[] args) {
@@ -277,7 +277,6 @@ public Node reverseRecursive(Node head) {
         list.head = list.reverseRecursive(list.head);
         System.out.println("\nAfter Recursive Reverse:");
         list.display();
-        
 
     }
 }

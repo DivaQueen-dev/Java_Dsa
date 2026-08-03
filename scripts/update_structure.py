@@ -12,7 +12,8 @@ START_MARKER = "<!-- STRUCTURE:START -->"
 END_MARKER = "<!-- STRUCTURE:END -->"
 
 # Folders/files to ignore when building the tree
-IGNORE = {".git", ".github", "scripts", "node_modules", "__pycache__"}
+IGNORE = {".git", ".github", "scripts", "node_modules", "__pycache__", "dashboard"}
+
 
 
 def build_tree():

@@ -23,7 +23,7 @@ class Complex {
     // Multiplication
     public static Complex product(Complex a, Complex b) {
         return new Complex(((a.real * b.real) - (a.imag * b.imag)),
-                           ((a.real * b.imag) + (a.imag * b.real)));
+            ((a.real * b.imag) + (a.imag * b.real)));
     }
 
     // Print method

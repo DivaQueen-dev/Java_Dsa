@@ -1,5 +1,4 @@
 
-
 public class StringFunctions {
     public static void main(String[] args) {
         String str = "Hello World";
@@ -12,5 +11,5 @@ public class StringFunctions {
         System.out.println(str.trim());
         System.out.println(str.replace('o', 'a'));
     }
-    
+
 }
