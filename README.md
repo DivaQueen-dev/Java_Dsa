@@ -59,23 +59,26 @@ Neither path is better. Use whichever fits your workflow.
 <!-- STRUCTURE:START -->
 ```
 Java_Dsa/
-├── Arrays/              → Array manipulation & classic problems
-├── BackTracking/        → Backtracking algorithms
-├── Basics/              → Java fundamentals — variables, loops, OOP
-├── BinaryTrees/         → Binary tree traversal & operations
-├── BitManipulation/     → Bitwise tricks & operations
-├── Greedy/              → Greedy algorithm problems
-├── Lists/               → Linked list implementations
-├── MatrixQs/            → 2D matrix problems
-├── OOPS/                → OOP concepts — inheritance, polymorphism
-├── Queue/               → Queue data structure
-├── Recursion/           → Recursive problem-solving
-├── Searching/           → Binary search, linear search
-├── SlidingWindow/       → Sliding window technique
-├── Sorting/             → Bubble, merge, quick, insertion sort
-├── Stack/               → Stack data structure
-├── Strings/             → String manipulation programs
-└── TwoPointer/          → Two pointer technique
+├── Arrays/
+├── BackTracking/
+├── Basics/
+├── BinaryTrees/
+├── BitManipulation/
+├── GETTING_STARTED.md
+├── Greedy/
+├── Lists/
+├── MatrixQs/
+├── OOPS/
+├── Queue/
+├── README.md
+├── Recursion/
+├── Searching/
+├── SlidingWindow/
+├── Sorting/
+├── Stack/
+├── Strings/
+├── TwoPointer/
+└── assets/
 ```
 <!-- STRUCTURE:END -->
 
