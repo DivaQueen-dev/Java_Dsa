@@ -11,7 +11,6 @@ import DsaTrack from './pages/DsaTrack';
 import TopicDetail from './pages/TopicDetail';
 import ProgramDetail from './pages/ProgramDetail';
 import Roadmap from './pages/Roadmap';
-import GettingStarted from './pages/GettingStarted';
 import About from './pages/About';
 
 // Scroll to top on every route change
@@ -37,7 +36,6 @@ function AppRoutes() {
           {/* Wildcard to capture nested paths like Arrays/ReverseArray.java */}
           <Route path="/program/*" element={<ProgramDetail />} />
           <Route path="/roadmap" element={<Roadmap />} />
-          <Route path="/getting-started" element={<GettingStarted />} />
           <Route path="/about" element={<About />} />
           {/* Fallback to home */}
           <Route path="*" element={<Home />} />

@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { to: '/java', label: 'Core Java', key: 'java' },
   { to: '/dsa', label: 'DSA', key: 'dsa' },
   { to: '/roadmap', label: 'Roadmap', key: 'roadmap' },
-  { to: '/getting-started', label: 'Get Started', key: 'getting-started' },
   { to: '/about', label: 'About', key: 'about' },
 ];
 

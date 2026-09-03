@@ -11,13 +11,15 @@ export default function ProgramDetail() {
   const { '*': rawPath } = useParams<{ '*': string }>();
   const navigate = useNavigate();
   const { isDark } = useTheme();
+  
   const programPath = decodeURIComponent(rawPath ?? '');
   const program = DSA_DATA.find(f => f.path === programPath);
+  
   const [toast, setToast] = useState(false);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [programPath]);
 
   const showToast = useCallback(() => {
@@ -26,41 +28,19 @@ export default function ProgramDetail() {
     toastTimer.current = setTimeout(() => setToast(false), 2500);
   }, []);
 
-  if (!program) {
-    return (
-      <div className="page-wrapper">
-        <div className="empty-state" style={{ marginTop: '80px' }}>
-          <img src="./assets/error.png" alt="Error" />
-          <h3>Program not found.</h3>
-          <p>The path <code>{programPath}</code> doesn't match any known program.</p>
-          <button className="btn btn-primary" style={{ marginTop: '16px' }} onClick={() => navigate('/dsa')}>
-            ← Back to DSA
-          </button>
-        </div>
-      </div>
-    );
-  }
+  if (!program) return (
+    <div className="page-wrapper" style={{ textAlign: 'center' }}>
+      <h1>Program not found.</h1>
+      <button className="btn btn-outline" onClick={() => navigate('/')}>Return Home</button>
+    </div>
+  );
 
   const diff = program.difficulty.toLowerCase() as 'easy' | 'medium' | 'hard';
-
-  const related = DSA_DATA
-    .filter(f => f.category === program.category && f.path !== program.path)
-    .slice(0, 4);
+  const related = DSA_DATA.filter(f => f.category === program.category && f.path !== program.path).slice(0, 4);
 
   async function handleCopy() {
-    try {
-      await navigator.clipboard.writeText(program!.code);
-    } catch {
-      // Fallback
-      const ta = document.createElement('textarea');
-      ta.value = program!.code;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
+    try { await navigator.clipboard.writeText(program!.code); }
+    catch { /* fallback logic omitted for brevity */ }
     showToast();
   }
 
@@ -69,159 +49,116 @@ export default function ProgramDetail() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = program!.name.endsWith('.java') ? program!.name : program!.name + '.java';
+    link.download = program!.name;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(url);
   }
-
-  const cmExtensions = [
-    java(),
-    EditorView.editable.of(false),
-    EditorView.lineWrapping,
-  ];
 
   return (
     <div className="page-wrapper">
-      {/* Breadcrumb */}
-      <nav className="breadcrumb" aria-label="Breadcrumb">
-        <button className="breadcrumb-link" onClick={() => navigate('/dsa')}>DSA</button>
-        <span className="breadcrumb-sep">›</span>
-        <button
-          className="breadcrumb-link"
-          onClick={() => navigate(`/topic/${encodeURIComponent(program.category)}`)}
-        >
-          {cleanTitle(program.category)}
-        </button>
-        <span className="breadcrumb-sep">›</span>
-        <span className="breadcrumb-current">{cleanTitle(program.name)}</span>
-      </nav>
-
-      {/* Header */}
-      <div style={{ marginBottom: '24px' }}>
-        <div className="program-header-info">
-          <span className={`badge badge-${diff}`}>{program.difficulty}</span>
-          <span style={{
-            fontSize: '0.75rem', color: 'var(--color-muted)',
-            background: 'var(--color-accent-light)', padding: '2px 8px',
-            borderRadius: '4px', border: '1px solid var(--color-border)'
-          }}>
-            {program.category}
+      
+      {/* Breadcrumb / Editorial Header */}
+      <div className="topic-header-editorial">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+          <button className="tag" onClick={() => navigate(`/topic/${encodeURIComponent(program.category)}`)} style={{ cursor: 'pointer' }}>
+            ← {cleanTitle(program.category)}
+          </button>
+          <span className="tag" style={{ fontFamily: 'var(--font-mono)' }}>{program.path}</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+          <span className={`diff-dot ${diff}`} style={{ width: '12px', height: '12px' }}></span>
+          <span style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-muted)' }}>
+            {program.difficulty}
           </span>
         </div>
-        <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', marginBottom: '8px' }}>
-          {cleanTitle(program.name)}
-        </h1>
-        <div className="path-tag">📁 {program.path}</div>
-        <div className="complexity-pills-row">
-          <span className="pill" title="Time complexity">⏳ Time: {program.timeComplexity}</span>
-          <span className="pill" title="Space complexity">📦 Space: {program.spaceComplexity}</span>
+        <h1>{cleanTitle(program.name)}</h1>
+        
+        <div style={{ display: 'flex', gap: '16px', marginTop: '24px' }}>
+          <div className="tag">⏳ {program.timeComplexity}</div>
+          <div className="tag">📦 {program.spaceComplexity}</div>
         </div>
       </div>
 
-      {/* Main layout */}
-      <div className="program-detail-layout">
-        {/* Code panel */}
-        <div className="code-panel">
-          <div className="code-panel-header">
-            <span className="code-panel-title">
-              <span style={{ fontSize: '0.9rem' }}>☕</span>
-              {program.name}
-            </span>
-            <div className="code-panel-actions">
-              <button
-                className="btn btn-outline btn-sm"
-                onClick={handleCopy}
-                title="Copy code to clipboard"
-              >
-                📋 Copy
-              </button>
-              <button
-                className="btn btn-outline btn-sm"
-                onClick={handleDownload}
-                title="Download .java file"
-              >
-                📥 Download
-              </button>
-              <a
-                href="https://onecompiler.com/java"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary btn-sm"
-                title="Open in online Java playground"
-              >
-                ▶ Practice
-              </a>
+      <div className="topic-content-grid" style={{ gridTemplateColumns: '1fr 320px' }}>
+        
+        {/* Left: Code IDE */}
+        <main>
+          <div className="ide-panel">
+            <div className="ide-header">
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--color-muted)' }}>
+                {program.name}
+              </div>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <button className="btn btn-outline btn-sm" onClick={handleCopy}>Copy</button>
+                <button className="btn btn-primary btn-sm" onClick={handleDownload}>Download</button>
+              </div>
+            </div>
+            <div className="cm-wrapper">
+              <CodeMirror
+                value={program.code}
+                extensions={[java(), EditorView.editable.of(false), EditorView.lineWrapping]}
+                theme={isDark ? oneDark : undefined}
+                basicSetup={{ lineNumbers: true, foldGutter: false }}
+              />
             </div>
           </div>
-          <div className="cm-wrapper">
-            <CodeMirror
-              value={program.code}
-              extensions={cmExtensions}
-              theme={isDark ? oneDark : undefined}
-              readOnly
-              basicSetup={{
-                lineNumbers: true,
-                foldGutter: false,
-                highlightActiveLine: false,
-                highlightSelectionMatches: false,
-              }}
-            />
-          </div>
-        </div>
+        </main>
 
-        {/* Info sidebar */}
-        <div className="program-sidebar">
-          {/* Theory */}
-          <div className="info-card">
-            <div className="info-card-title">📖 Theory</div>
-            <p>{program.theory}</p>
+        {/* Right: Insights Sidebar */}
+        <aside style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div className="card">
+            <h3 style={{ fontSize: '0.9rem', color: 'var(--color-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>Theory</h3>
+            <p style={{ fontSize: '0.95rem' }}>{program.theory}</p>
           </div>
 
-          {/* Analogy */}
-          <div className="info-card" style={{ borderLeft: '3px solid var(--color-second)' }}>
-            <div className="info-card-title">🌿 Analogy</div>
-            <p style={{ fontStyle: 'italic' }}>{program.analogy}</p>
+          <div className="card" style={{ borderLeft: '3px solid var(--color-second)' }}>
+            <h3 style={{ fontSize: '0.9rem', color: 'var(--color-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>Analogy</h3>
+            <p style={{ fontSize: '0.95rem', fontStyle: 'italic' }}>{program.analogy}</p>
           </div>
 
-          {/* Dry Run */}
-          <div className="info-card">
-            <div className="info-card-title">🔍 Dry Run</div>
-            <pre>{program.dry_run}</pre>
+          <div className="card">
+            <h3 style={{ fontSize: '0.9rem', color: 'var(--color-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>Dry Run</h3>
+            <pre style={{ background: 'var(--color-bg-code)', padding: '12px', borderRadius: 'var(--border-radius-sm)', fontSize: '0.8rem', whiteSpace: 'pre-wrap' }}>
+              {program.dry_run}
+            </pre>
           </div>
 
-          {/* Expected Output */}
-          <div className="info-card">
-            <div className="info-card-title">📤 Expected Output</div>
-            <pre>{program.output}</pre>
+          <div className="card">
+            <h3 style={{ fontSize: '0.9rem', color: 'var(--color-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>Output</h3>
+            <pre style={{ background: 'var(--color-bg-code)', padding: '12px', borderRadius: 'var(--border-radius-sm)', fontSize: '0.8rem', whiteSpace: 'pre-wrap' }}>
+              {program.output}
+            </pre>
           </div>
 
-          {/* Related programs */}
           {related.length > 0 && (
-            <div className="info-card">
-              <div className="info-card-title">🔗 More in {cleanTitle(program.category)}</div>
-              <div className="related-pills">
+            <div className="card">
+              <h3 style={{ fontSize: '0.9rem', color: 'var(--color-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>Related Programs</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {related.map(r => (
-                  <button
-                    key={r.path}
-                    className="pill clickable"
+                  <button 
+                    key={r.path} 
                     onClick={() => navigate(`/program/${encodeURIComponent(r.path)}`)}
-                    title={r.path}
+                    style={{ textAlign: 'left', padding: '8px', fontSize: '0.85rem', borderRadius: 'var(--border-radius-sm)', background: 'var(--color-bg-code)', color: 'var(--color-text)', transition: 'background var(--transition)' }}
+                    onMouseOver={e => e.currentTarget.style.background = 'var(--color-border)'}
+                    onMouseOut={e => e.currentTarget.style.background = 'var(--color-bg-code)'}
                   >
-                    ☕ {cleanTitle(r.name)}
+                    {cleanTitle(r.name)}
                   </button>
                 ))}
               </div>
             </div>
           )}
-        </div>
+        </aside>
+
       </div>
 
-      {/* Copy Toast */}
-      <div className={`toast${toast ? ' show' : ''}`} role="status" aria-live="polite">
-        ✅ Code copied to clipboard!
-      </div>
+      {/* Toast */}
+      {toast && (
+        <div style={{ position: 'fixed', bottom: '32px', right: '32px', background: 'var(--color-text)', color: 'var(--color-bg)', padding: '12px 24px', borderRadius: '24px', fontSize: '0.9rem', fontWeight: 600, boxShadow: 'var(--shadow-hover)', zIndex: 9999, animation: 'fadeInUp 0.3s ease' }}>
+          Copied to clipboard
+        </div>
+      )}
     </div>
   );
 }

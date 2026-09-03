@@ -1,0 +1,10 @@
+Segment Tree
+Fenwick Tree (BIT)
+Sparse Table
+KMP
+Rabin-Karp
+Z Algorithm
+Suffix Array
+Suffix Automaton
+Rolling Hash
+Aho-Corasick
