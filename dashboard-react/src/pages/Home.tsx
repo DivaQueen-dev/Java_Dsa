@@ -13,16 +13,21 @@ export default function Home() {
     <div className="page-wrapper">
       
       {/* Editorial Hero */}
-      <section className="hero-editorial">
-        <span className="tag" style={{ marginBottom: '16px' }}>Java & DSA Portfolio</span>
-        <h1>Code, curated.</h1>
-        <p>
-          A minimalist reference library for Core Java and Data Structures & Algorithms. 
-          Built to inspire, organized for quick discovery. No courses, just clean code.
-        </p>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
-          <button className="btn btn-primary" onClick={() => navigate('/java')}>Browse Core Java</button>
-          <button className="btn btn-outline" onClick={() => navigate('/dsa')}>Explore DSA</button>
+      <section className="hero-editorial" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '32px' }}>
+        <div style={{ flex: '1 1 400px' }}>
+          <span className="tag" style={{ marginBottom: '16px' }}>My Java & DSA Portfolio</span>
+          <h1 style={{ fontSize: '3rem', fontWeight: 800, lineHeight: 1.2, marginBottom: '24px' }}>Hey, I'm Diva. Welcome to my codebase! 🚀</h1>
+          <p style={{ fontSize: '1.2rem', lineHeight: 1.6, marginBottom: '32px' }}>
+            I built this space to document everything I learn about Core Java and Data Structures & Algorithms. It's basically my digital notebook, but prettier. 
+            Feel free to look around and steal some code!
+          </p>
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <button className="btn btn-primary" onClick={() => navigate('/java')}>Browse Core Java</button>
+            <button className="btn btn-outline" onClick={() => navigate('/dsa')}>Explore DSA</button>
+          </div>
+        </div>
+        <div style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}>
+          <img src="./assets/lesgo.png" alt="Let's go" style={{ maxWidth: '100%', maxHeight: '350px', objectFit: 'contain' }} />
         </div>
       </section>
 
