@@ -61,11 +61,13 @@ Java_Dsa/
 ├── BinaryTrees/
 ├── BitManipulation/
 ├── FinalBoss/
+├── GETTING_STARTED.md
 ├── Greedy/
 ├── Lists/
 ├── MatrixQs/
 ├── OOPS/
 ├── Queue/
+├── README.md
 ├── Recursion/
 ├── Searching/
 ├── SlidingWindow/
@@ -73,6 +75,7 @@ Java_Dsa/
 ├── Stack/
 ├── Strings/
 ├── TwoPointer/
+├── assets/
 └── dashboard-react/
 ```
 <!-- STRUCTURE:END -->
