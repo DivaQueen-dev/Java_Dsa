@@ -87,9 +87,9 @@ export default function Navbar() {
       <nav className="navbar">
         <div className="nav-container">
           {/* Logo */}
-          <Link to="/" className="nav-logo" onClick={() => setDrawerOpen(false)}>
-            <img src="./assets/logo.png" alt="cozy library logo" />
-            <span className="nav-logo-text">cozy library</span>
+          <Link to="/" className="nav-logo" onClick={() => setDrawerOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <img src="./assets/favicon.jpg" alt="Diva's logo" style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--color-accent)' }} />
+            <span className="nav-logo-text">My DSA Journey</span>
           </Link>
 
           {/* Desktop links */}
