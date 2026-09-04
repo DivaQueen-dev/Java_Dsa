@@ -74,9 +74,7 @@ Java_Dsa/
 ├── Sorting/
 ├── Stack/
 ├── Strings/
-├── TwoPointer/
-├── assets/
-└── dashboard-react/
+└── TwoPointer/
 ```
 <!-- STRUCTURE:END -->
 
