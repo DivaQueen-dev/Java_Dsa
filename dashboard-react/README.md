@@ -1,32 +1,21 @@
-# React + TypeScript + Vite
+# My DSA & Java Journey 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Hey everyone! Welcome to my personal codebase. I built this dashboard to document my journey learning Core Java and Data Structures & Algorithms. 
 
-Currently, two official plugins are available:
+I was tired of my code just sitting in random folders, so I created this aesthetic space to track my progress, organize my notes, and actually make studying fun. It's basically my digital notebook!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What's Inside?
+- **Java Basics:** My notes and code snippets on core Java concepts.
+- **DSA (Data Structures & Algorithms):** Problems I've solved, neatly categorized.
+- **My Progress:** A visual way for me to track how much I've covered.
 
-## React Compiler
+Feel free to browse around, read my notes, and use any of the code you find helpful!
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup
 
-## Expanding the Oxlint configuration
+If you want to run this locally on your machine:
+1. Clone the repository.
+2. Run `npm install`
+3. Run `npm run dev` to start the local server.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+This project is built with React, TypeScript, and Vite.
